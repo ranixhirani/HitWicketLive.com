@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule</title>
+    <style>
+        body {
+            color: rgb(217, 210, 216);
+            font-family: Arial, sans-serif;
+            background-image: url('sdule1.jpg');
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
+        }
+
+        .top-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background-color: #020e3d;
+        }
+
+        .logo {
+            width: 80px; /* Adjust the width as needed */
+            height: 80px; /* Adjust the height as needed */
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .top-navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .top-navbar li {
+            margin: 0 90px;
+        }
+        .top-navbar a {
+            color: white; /* Set the text color to white */
+            text-decoration: none; /* Remove underlines */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="top-navbar">
+            
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <center> <h2>Scheduled Matches And Upcoming Matches !</h2></center>
+            <ul>
+                <li><a href="website.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="score-frame">
+        <a rel="nofollow" href="https://www.crictimes.org/cricket-scores" style="color: #02071c; text-decoration: none;">Live Cricket Scores</a>
+    </div>
+
+    <script type="text/javascript">
+        var html = document.getElementById('score-frame');
+        html.innerHTML = '<iframe src="https://cwidget.crictimes.org/?v=1.1&a=000080&c=000000&bo=000000" style="width:100%; min-height: 460px;" frameborder="0" scrolling="yes"></iframe>';
+    </script>
+</body>
+</html>
