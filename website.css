@@ -1,0 +1,144 @@
+/* ... (other CSS rules) ... */
+
+header {
+    background-color: #020e3d;
+    color: #fff;
+    padding:50px;
+}   
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('stad.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    
+} 
+
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.top-navbar .logo img {
+    width: 100px; 
+}
+
+.top-navbar .quote p {
+    font-style: italic;
+    font-size: 18px;
+}
+
+.top-navbar .search {
+    display: flex;
+    align-items: center;
+}
+.main-navbar{
+   background-color: #010410;
+   padding: 15px;
+}
+.main-navbar ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.main-navbar li{
+    margin: 0px 40px; 
+}
+.main-navbar a{
+    color: #ccc;
+    font-weight: 300;
+    font-size: 17px;
+}
+#searchInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 20px; /* Adjust the spacing */
+}
+
+#searchButton {
+    background-color: #fff;
+    color: #010803;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    cursor: pointer;
+}
+
+.scoreboard {
+    text-align: center;
+    margin: 20px;
+    color: #000000;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-around;
+}
+
+.team {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e6e8ef;
+    
+    
+}
+.timestamp{
+    font-size: 34px;
+    font-weight: bold;
+    text-shadow:#13f09f;
+}
+
+.match-info {
+    margin-top: 20px;
+    display: flex;
+    font-weight: bold;
+    font-size: 34px;
+    justify-content: center;
+    
+}
+.match-info p {
+    margin: 0 20px; 
+    text-shadow: 1px 1px 2px #12cf41;
+    color: #e6e8ef;
+
+}
+
+#overs, #target {
+    font-weight: bold;
+    color: #10db76;
+   
+}
+
+#element {
+    font-size: 40px; /* You can adjust the size as needed */
+  }
+
+.footer-navbar {
+    background-color: #020e3d; /* Replace with the same color as the header logo */
+    color: white; /* Text color in the footer navigation bar */
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.footer-navbar ul li {
+    margin: 0;
+}
+
+.footer-navbar ul li a {
+    text-decoration: none;
+    color: white;
+}
+
