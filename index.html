@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="website.css">
+    <title>Hit Wicket Live</title>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
+<body>
+    <header>
+        <nav class="top-navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="quote">
+                <span id="element"></span>
+            </div>
+            <div class="search">
+                <input type="text" id="searchInput" placeholder="Search...">
+                <button id="searchButton">Search</button>
+            </div>
+        </nav>
+    </header>
+    <div class="scoreboard">
+        <iframe src="https://bwidget.crictimes.org/" style="width:100%; min-height: 250px;" frameborder="0" scrolling="yes"></iframe>
+    </div>
+
+    <footer>
+      <footer>
+        <nav class="footer-navbar">
+            <ul>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="https://www.cricbuzz.com/cricket-series/6732/icc-cricket-world-cup-2023/news">Cric News</a></li>
+                <li><a href="team.html">Team Info</a></li>
+                <li><a href="https://www.linkedin.com/in/rani-hirani-039a7120b/">About</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+            </ul>
+        </nav>
+    </footer>
+    
+    <script>
+        var words = ["Welcome!", "LET'S", 'WATCH', 'CRICKET', '!!!'];
+        var currentWordIndex = 0;
+
+        var options = {
+            strings: [words.join(' ')],  // Join all words into a single string
+            typeSpeed: 50,
+            onComplete: function () {
+                currentWordIndex++;
+                if (currentWordIndex < words.length) {
+                    typedInstance.typeString(' ' + words[currentWordIndex]).start();
+                }
+            },
+        };
+
+        var typedInstance = new Typed('#element', options);
+    </script>
+</body>
+</html>
