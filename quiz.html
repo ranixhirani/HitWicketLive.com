@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cricket Quiz</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #020e3d;
+      margin: 0; /* Remove default margin */
+      padding: 0;
+    }
+    header {
+      background-color: #020e3d;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+    .logo img {
+      width: 80px; /* Adjust the size of the logo as needed */
+      
+    }
+
+    .quote {
+      margin-right:450px; /* Add margin to the right of the quote */
+      color: #fff; /* Set text color to white */
+      font-size: 34px; /* Adjust the font size as needed */
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    #quiz-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #020e3d;
+      border-radius: 10px;
+      background-color: rgb(248, 248, 248);
+    }
+
+    .question {
+      margin-bottom: 20px;
+
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .option {
+      margin: 10px;
+      padding: 10px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .option:hover {
+      background-color: #e0e0e0;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    #next-btn {
+      margin-top: 10px; /* Add some space between options and the button */
+      padding: 10px;
+      background-color: #020e3d;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #next-btn:hover {
+      background-color: #004080;
+    }
+    
+  </style>
+</head>
+<body>
+    <header>
+            <div class="logo">
+                <img src="logo.png" alt="Logo">
+            </div>
+            <div class="quote">
+                <span id="element"></span>
+            </div>
+    </header>   
+<div id="quiz-container">
+  <h1>Cricket Quiz</h1>
+
+  <div id="question-container" class="question"></div>
+  <div id="options-container" class="options"></div>
+  <div id="result"></div>
+  <button onclick="nextQuestion()">Next Question</button>
+</div>
+
+<script>    
+  const quizData = [
+    {
+      question: "Who scored the first century in the history of cricket World Cup?",
+      options: ["Vivian Richards", "Clive Lloyd", "Sunil Gavaskar", "Dennis Amiss"],
+      correctAnswer: "Dennis Amiss"
+    },
+    {
+      question: "Which counrty has won the  most cricket World Cups?",
+      options: ["Australia", "India", "West Indies", "Pakistan"],
+      correctAnswer: "Australia"
+    },
+    {
+      question: "In which year was the first cricket Wrold Cup held",
+      options: ["1967", "1975", "1983", "1992"],
+      correctAnswer: "1975"
+    },
+    {
+      question: "Who holds the record for the highest individual score in a single Wolrd Cup innings",
+      options: ["Sachin Tendulkar", "Ricky Ponting", "Virat Kohli", "Chris Gayle"],
+      correctAnswer: "Virat Kohli"
+    },
+    {
+      question: "Which counrty has won the  most cricket World Cups",
+      options: ["Australia", "India", "West Indies", "Pakistan"],
+      correctAnswer: "Australia"
+    },
+    {
+      question: "Which team won the inaugural ICC Cricket World Cup in 1975?",
+      options: ["Australia", "India", "West Indies", "Pakistan"],
+      correctAnswer: "West Indies"
+    },
+    {
+      question: "Which player has the most centuries in cricket world cup history?",
+      options: ["Sachin Tendulkar", "Ricky Ponting", "Virat Kohli", "Chris Gayle"],
+      correctAnswer: "Virat Kohli"
+    },
+    {
+      question: "What is the highest team total in a cricket World Cup match?",
+      options: ["481/6", "428/5", "376/2", "372/4"],
+      correctAnswer: "Australia"
+    },
+    {
+      question: "Who captained india to victory in 1983 World Cup?",
+      options: ["Australia", "India", "West Indies", "Pakistan"],
+      correctAnswer: "Australia"
+    },
+    // Add more questions as needed
+  ];
+
+  let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+  const questionContainer = document.getElementById('question-container');
+  const optionsContainer = document.getElementById('options-container');
+  const resultContainer = document.getElementById('result');
+
+  const currentQuizData = quizData[currentQuestion];
+
+  questionContainer.textContent = currentQuizData.question;
+  optionsContainer.innerHTML = "";
+
+  currentQuizData.options.forEach((option, index) => {
+    const button = document.createElement('button');
+    button.classList.add('option');
+    button.textContent = option;
+    button.addEventListener('click', () => checkAnswer(option));
+    optionsContainer.appendChild(button);
+  });
+
+  resultContainer.textContent = `Score: ${score}`;
+}
+
+function checkAnswer(answer) {
+  const currentQuizData = quizData[currentQuestion];
+  if (answer === currentQuizData.correctAnswer) {
+    score++;
+    console.log('Correct Answer! Score:', score);
+  } else {
+    console.log('Incorrect Answer! Score:', score);
+  }
+
+  // After checking the answer, move to the next question
+  nextQuestion();
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < quizData.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  const resultContainer = document.getElementById('result');
+  resultContainer.textContent = `Quiz completed! Your final score is ${score} out of ${quizData.length}.`;
+}
+
+// Initial load
+loadQuestion();
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  var words = ["Welcome!", "LET'S", 'PLAY', 'QUIZ', '!!!'];
+  var currentWordIndex = 0;
+
+  var options = {
+    strings: [words.join(' ')],  // Join all words into a single string
+    typeSpeed: 50,
+    onComplete: function () {
+      currentWordIndex++;
+      if (currentWordIndex < words.length) {
+        typedInstance.typeString(' ' + words[currentWordIndex]).start();
+      }
+    },
+  };
+  var typedInstance = new Typed('#element', options);
+</script>
+</body>
+</html>
+
